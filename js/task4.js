@@ -6,16 +6,16 @@ let inQuantity = prompt(
 );
 
 if (inQuantity === null) {
-  console.log('Отменено пользователем!');
-}
+  console.log('Отменено пользователем!');    
+} else if (inQuantity >= 0) {
+  let totalPrice = pricePerDroid * inQuantity;
+  if (totalPrice > credits) {
+    console.log('Недостаточно средств на счету!');
+  } else {
+    console.log(
+      `Вы купили ${inQuantity} дроидов, на счету осталось ${credits -
+        totalPrice} кредитов.`,
+    )
+  }
+};
 
-let totalPrice = pricePerDroid * inQuantity;
-
-if (totalPrice > credits) {
-  console.log('Недостаточно средств на счету!');
-} else if (inQuantity !== null) {
-  console.log(
-    `Вы купили ${inQuantity} дроидов, на счету осталось ${credits -
-      totalPrice} кредитов.`,
-  );
-}
